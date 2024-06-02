@@ -1,4 +1,4 @@
-# Movie Library Web 
+# Movie's Seach Web App
 
 ## Overview
 
