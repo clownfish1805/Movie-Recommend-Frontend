@@ -33,11 +33,14 @@ const SigninPage = () => {
   });
 };
     
-  const handleSubmit = async (e) => {
-    
-    console.log(JSON.stringify(formData));    
+   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    if (!formData.email || !formData.password) {
+      alert("Please fill in both email and password fields.");
+      return;
+    }
+     try {
+       alert("Inside try");
       const response = await fetch('https://movie-recommend-backend-jvnl.vercel.app/api/signin', {
         method: 'POST',
         headers: {
@@ -46,22 +49,19 @@ const SigninPage = () => {
         body: JSON.stringify(formData)
       });
       
+       
       if (!response.ok) {
         throw new Error('Invalid email or password');
       }
       
       const data = await response.json();
-      
       localStorage.setItem('token', data.token); // Store token in local storage
-
       navigate('/home'); // Redirect to home page
-
     } catch (error) {
       console.error(error);
       alert('Failed to sign in. Please check your credentials.');
     }
   };
-
   const handleSignup = () => {
     navigate('/signup')
   }
