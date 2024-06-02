@@ -1,9 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import LoginButton from './Components/login';
-import LogoutButton from './Components/logout';
 import { useEffect, useState } from 'react';
-import { gapi } from 'gapi-script';
 
 import Favorites from './Components/Favorites';
 
@@ -17,53 +13,52 @@ const clientID = "453971664497-cg6lpjtcv8m1oqcbf5ulg3tombim97tu.apps.googleuserc
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+//   const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientID,
-        scope: ""
-      })
-        .then(() => {
-                const authInstance = gapi.auth2.getAuthInstance();
-                setIsLoggedIn(authInstance.isSignedIn.get()); 
-                authInstance.isSignedIn.listen(updateSigninStatus); 
-            });
-  };
-  gapi.load('client:auth2', start);
-  })
-
-
-
-  const accessToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
-  const refreshToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().refresh_token;
+//   useEffect(() => {
+//     function start() {
+//       gapi.client.init({
+//         clientId: clientID,
+//         scope: ""
+//       })
+//         .then(() => {
+//                 const authInstance = gapi.auth2.getAuthInstance();
+//                 setIsLoggedIn(authInstance.isSignedIn.get()); 
+//                 authInstance.isSignedIn.listen(updateSigninStatus); 
+//             });
+//   };
+//   gapi.load('client:auth2', start);
+//   })
 
 
-   const updateSigninStatus = (isUserSignedIn) => {
-        setIsLoggedIn(isUserSignedIn); 
-    }
+
+//   const accessToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
+//   const refreshToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().refresh_token;
+
+
+//    const updateSigninStatus = (isUserSignedIn) => {
+//         setIsLoggedIn(isUserSignedIn); 
+//     }
 
   
-const ConsoleLog = ({ token }) => {
-    useEffect(() => {
-        console.log('Access Token:', token);
-    }, [token]);
+// const ConsoleLog = ({ token }) => {
+//     useEffect(() => {
+//         console.log('Access Token:', token);
+//     }, [token]);
 
-    return null; 
-};
+//     return null; 
+// };
 
   
   return (
-        <Router>
-          <Routes>
-            <Route path="/favorite" element={<Favorites />} />
-        <Route path="/" element={<SigninPage  />} />
+    <Router>
+      <Routes>
+        <Route path="/favorite" element={<Favorites />} />
+        <Route path="/" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/home" element={<MovieSearch />} />
       </Routes>
-       {accessToken && <ConsoleLog token={accessToken} />}
-        </Router>
+    </Router>
     );
 }
 

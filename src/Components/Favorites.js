@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BiHeart, BiHome, BiSolidCameraMovie, BiUser } from 'react-icons/bi';
-import Logout from './logout';
 import { useNavigate } from 'react-router-dom';
 
 function Favorite() {

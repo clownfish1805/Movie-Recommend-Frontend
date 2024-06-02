@@ -70,6 +70,8 @@ const dummyData = [
     }
 ];
 
+
+
 const MovieSearch = () => {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState(dummyData);
@@ -128,9 +130,7 @@ const MovieSearch = () => {
 
     return (
         <>
-    
-            
-            {/* Header */}
+      {/* Header */}
             
          <div className='bg-warning p-3 d-flex justify-content-between align-items-center'>
             <h1 className="d-flex align-items-center">
@@ -162,28 +162,24 @@ const MovieSearch = () => {
                     <span>Sign Out</span>
                 </div>
             </div>
-        </div>
-        
-
-    <div className='bg-dark min-vh-100'>
-            
-        <div className="container bg-dark text-white">
-
-            <div className="row justify-content-center">
-                <div className="col-lg-6">
-                    <h3 className="text-center mb-4 mt-4">Search your Favorite Movie</h3>
-                    <div className="input-group mb-3">
-                        <input
-                            type='text'
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                            className="form-control"
-                            placeholder='Search for a movie'
-                        />
-                        <button onClick={searchMovie} className="btn btn-outline-dark bg-warning text-black ml-2">Search</button>
+            </div>
+            <div className='bg-dark min-vh-100'>
+                <div className="container bg-dark text-white">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-6">
+                          <h3 className="text-center mb-4 mt-4">Search your Favorite Movie</h3>
+                            <div className="input-group mb-3">
+                                <input
+                                    type='text'
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                    className="form-control"
+                                    placeholder='Search for a movie'
+                                />
+                                <button onClick={searchMovie} className="btn btn-outline-dark bg-warning text-black ml-2">Search</button>
+                           </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
 
             {movies.length > 0 && (
                 <div className="row mt-4">
@@ -214,10 +210,10 @@ const MovieSearch = () => {
             )}
 
             {error && <p className="text-danger text-center">{error}</p>}
-            </div>
-            </div>
+        </div>
+        </div>
             
-                </>
+    </>
     );
 }
 

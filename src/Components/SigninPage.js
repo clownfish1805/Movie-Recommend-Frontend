@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Login from './login';
 import { BiHeart, BiHome, BiSolidCameraMovie, BiUser } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,40 +8,32 @@ const SigninPage = () => {
     email: '',
     password: ''
     });
-    
-
   
   const navigate = useNavigate();
 
-
-   const handleInputChange = (e) => {
-  
-     const { name, value } = e.target;
-  console.log(`email: ${name}, value: ${value}`);
-  
-  setFormData({
+  const handleInputChange = (e) => {
+     
+    const { name, value } = e.target;
+    console.log(`email: ${name}, value: ${value}`);
+    
+    setFormData({
     ...formData,
     [name]: value
   });
 };
     
   const handlePasswordInputChange = (e) => {
+   const { name, value } = e.target;
+   console.log(`password: ${name}, value: ${value}`);
   
-     const { name, value } = e.target;
-  console.log(`password: ${name}, value: ${value}`);
-  
-  setFormData({
+   setFormData({
     ...formData,
     [name]: value
   });
 };
     
-
-  
-
   const handleSubmit = async (e) => {
     
-    //setFormData = (email.data, password.data);
     console.log(JSON.stringify(formData));    
     e.preventDefault();
     try {
@@ -70,26 +61,23 @@ const SigninPage = () => {
     }
   };
 
-
   const handleSignup = () => {
     navigate('/signup')
   }
+
+
 
   return (
     <>
       
       {/* Header */}
-
        <div className='bg-warning p-3 d-flex justify-content-between align-items-center'>
             <h1 className="d-flex align-items-center">
                 <BiSolidCameraMovie size={60} className='me-2' /> CineSearch
             </h1>
-           
       </div>
       
 
-
-        
     <section className="vh-100">
       <div className="container py-5 h-100">
         <div className="row d-flex align-items-center justify-content-center h-100">
@@ -130,8 +118,6 @@ const SigninPage = () => {
                 <div>
                   <p>Dont't have an account ? <a href='/signup'>Sign Up</a></p>
                 </div>
-                {/* <hr></hr>
-              <Login/> */}
             </form>
           </div>
         </div>
