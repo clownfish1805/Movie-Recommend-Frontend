@@ -18,7 +18,7 @@ This is a movie library web application built using React for the frontend. It a
 
 ## Steps to Run
 
-1. Clone the repository
-2. Navigate to the project directory
-3.Install dependencies
-4.Start the development server with command **npm start**
+1. Clone the repository<br>
+2. Navigate to the project directory<br>
+3.Install dependencies<br>
+4.Start the development server with command **npm start**<br>
