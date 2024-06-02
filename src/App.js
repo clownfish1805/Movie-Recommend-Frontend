@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+
 
 import Favorites from './Components/Favorites';
 
@@ -13,21 +13,6 @@ const clientID = "453971664497-cg6lpjtcv8m1oqcbf5ulg3tombim97tu.apps.googleuserc
 
 
 function App() {
-
-const [backendData, setBackendData] = useState(null);
-
-  useEffect(() => {
-    // Example of making a GET request to your backend
-    axios.get('https://movie-recommend-backend-jvnl.vercel.app/api/signin')
-      .then(response => {
-        setBackendData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data from backend:', error);
-      });
-  }, []);
-
-
 
   return (
     <Router>
