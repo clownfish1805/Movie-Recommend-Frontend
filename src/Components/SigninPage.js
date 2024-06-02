@@ -82,7 +82,7 @@ const SigninPage = () => {
       <div className="container py-5 h-100">
         <div className="row d-flex align-items-center justify-content-center h-100">
           <div className="col-md-8 col-lg-7 col-xl-6">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+            <img src="https://i.pinimg.com/736x/22/1f/53/221f530242648b865105694277382974.jpg"
               className="img-fluid" alt="Phone image" />
           </div>
           <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">

@@ -191,7 +191,7 @@ const SignupPage = () => {
                   </div>
                   <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                     <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      src="https://pmsaposse.sp.gov.br/wp-content/uploads/2018/09/cinemapontosmis.jpg"
                       className="img-fluid"
                       alt="Sample image"
                     />
