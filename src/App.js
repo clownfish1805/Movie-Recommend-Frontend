@@ -13,43 +13,8 @@ const clientID = "453971664497-cg6lpjtcv8m1oqcbf5ulg3tombim97tu.apps.googleuserc
 
 function App() {
 
-//   const [isLoggedIn, setIsLoggedIn] = useState(false); 
-
-//   useEffect(() => {
-//     function start() {
-//       gapi.client.init({
-//         clientId: clientID,
-//         scope: ""
-//       })
-//         .then(() => {
-//                 const authInstance = gapi.auth2.getAuthInstance();
-//                 setIsLoggedIn(authInstance.isSignedIn.get()); 
-//                 authInstance.isSignedIn.listen(updateSigninStatus); 
-//             });
-//   };
-//   gapi.load('client:auth2', start);
-//   })
-
-
-
-//   const accessToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
-//   const refreshToken = gapi.auth2 && gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().refresh_token;
-
-
-//    const updateSigninStatus = (isUserSignedIn) => {
-//         setIsLoggedIn(isUserSignedIn); 
-//     }
-
   
-// const ConsoleLog = ({ token }) => {
-//     useEffect(() => {
-//         console.log('Access Token:', token);
-//     }, [token]);
 
-//     return null; 
-// };
-
-  
   return (
     <Router>
       <Routes>
