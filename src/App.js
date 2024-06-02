@@ -18,14 +18,14 @@ const [backendData, setBackendData] = useState(null);
 
   useEffect(() => {
     // Example of making a GET request to your backend
-    axios.get('https://movie-recommend-backend-jvnl.vercel.app/')
+    axios.get('https://movie-recommend-backend-jvnl.vercel.app/api/signin')
       .then(response => {
         setBackendData(response.data);
       })
       .catch(error => {
         console.error('Error fetching data from backend:', error);
       });
-  }, []); 
+  }, []);
 
 
 
