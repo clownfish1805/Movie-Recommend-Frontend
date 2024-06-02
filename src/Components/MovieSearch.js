@@ -83,7 +83,7 @@ const MovieSearch = () => {
   
     const searchMovie = async () => {
         try {
-            const resp = await fetch(`http://localhost:5000/api/search?name=${query}`, {
+            const resp = await fetch(`https://movie-recommend-backend-jvnl.vercel.app/api/search?name=${query}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const MovieSearch = () => {
     const addToFavorites = async (movie) => {
         console.log(JSON.stringify(movie));
         try {
-            const resp = await fetch(`http://localhost:5000/api/favorite`, {
+            const resp = await fetch(`https://movie-recommend-backend-jvnl.vercel.app/api/favorite`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

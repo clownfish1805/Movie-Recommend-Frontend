@@ -10,7 +10,7 @@ function Favorite() {
 
      const fetchFavorites = async () => {
         try {
-            const resp = await fetch('http://localhost:5000/api/favorite', {
+            const resp = await fetch('https://movie-recommend-backend-jvnl.vercel.app/api/favorite', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
