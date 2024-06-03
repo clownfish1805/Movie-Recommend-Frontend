@@ -82,12 +82,18 @@ const MovieSearch = () => {
     const navigate = useNavigate();
   
     const searchMovie = async () => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            setError('User not authenticated');
+            return;
+        }
+
         try {
-            const resp = await fetch(`https://movie-recommend-backend-jvnl.vercel.app/api/search?name=${query}`, {
+            const resp = await fetch(`http://localhost:5000/api/search?name=${query}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    'Authorization': `Bearer ${token}`
                 }
             });
             if (!resp.ok) {
@@ -106,17 +112,22 @@ const MovieSearch = () => {
     }
 
     const addToFavorites = async (movie) => {
+         const token = localStorage.getItem('token');
+        if (!token) {
+            setError('User not authenticated');
+            return;
+        }
         console.log(JSON.stringify(movie));
         try {
-            const resp = await fetch(`https://movie-recommend-backend-jvnl.vercel.app/api/favorite`, {
+            const resp = await fetch(`http://localhost:5000/api/favorite`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(movie)
             });
-            alert("Added to favorite");   
+            alert("Added to Favorites!");
         }
         catch(error) {
             console.error(error);
@@ -140,7 +151,7 @@ const MovieSearch = () => {
                 <div
                     className='d-flex align-items-center me-3'
                     style={{ cursor: 'pointer' }}
-                    onClick={() => navigate('/')}
+                    
                 >
                     <BiHome size={30} className='me-2' />
                     <span>Home</span>

@@ -33,7 +33,7 @@ const SignupPage = () => {
     }
       
     try {
-      const response = await fetch('http://localhost:5000/api/signup', {
+      const response = await fetch(`http://localhost:5000/api/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -50,6 +50,7 @@ const SignupPage = () => {
       }
 
       alert('User registered successfully');
+      navigate('/');
     } catch (error) {
       console.error(error);
       alert('Error registering user');

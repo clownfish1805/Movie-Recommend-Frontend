@@ -8,13 +8,18 @@ function Favorite() {
 
     const navigate = useNavigate();
 
-     const fetchFavorites = async () => {
+    const fetchFavorites = async () => {
+          const token = localStorage.getItem('token');
+        if (!token) {
+            setError('User not authenticated');
+            return;
+        }
         try {
-            const resp = await fetch('https://movie-recommend-backend-jvnl.vercel.app/api/favorite', {
+            const resp = await fetch(`http://localhost:5000/api/favorite`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    'Authorization': `Bearer ${token}`
                 }
             });
 

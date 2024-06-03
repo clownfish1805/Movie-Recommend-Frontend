@@ -3,6 +3,7 @@ import { BiHeart, BiHome, BiSolidCameraMovie, BiUser } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
 
+
 const SigninPage = () => {
 
   const [formData, setFormData] = useState({
@@ -38,10 +39,11 @@ const SigninPage = () => {
     if (!formData.email || !formData.password) {
       alert("Please fill in both email and password fields.");
       return;
-    }
+     }
+     
      try {
-       alert("Inside try");
-      const response = await fetch('https://movie-recommend-backend-jvnl.vercel.app/api/signin', {
+       
+      const response = await fetch(`http://localhost:5000/api/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
